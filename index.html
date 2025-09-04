@@ -12,104 +12,42 @@
     body {
       margin: 0;
       font-family: sans-serif;
-      padding: 16px;
       background: #f8f8f8;
     }
 
     .container {
-      max-width: 1200px;
+      max-width: 1600px;
       margin: 0 auto;
-      padding: 0 5%;
+      padding: 40px 5vw;
     }
 
     .gallery {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
+      column-count: 3;
+      column-gap: 24px;
     }
 
-    .gallery-row {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .gallery-block {
-      display: flex;
-      gap: 12px;
-      width: 100%;
-    }
-
-    .gallery-block img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-      display: block;
-    }
-
-    .layout-a {
-      display: flex;
-      width: 100%;
-    }
-
-    .layout-a .left {
-      flex: 1;
-    }
-
-    .layout-a .right {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .layout-b {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      gap: 12px;
-    }
-
-    .layout-b .top {
-      display: flex;
-      gap: 12px;
-    }
-
-    .layout-b .bottom {
-      width: 100%;
-    }
-
-    .layout-c {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .layout-c .top {
-      width: 100%;
-    }
-
-    .layout-c .bottom {
-      display: flex;
-      gap: 12px;
-    }
-
-    .layout-c .bottom img {
-      flex: 1;
+    @media (max-width: 1024px) {
+      .gallery {
+        column-count: 2;
+      }
     }
 
     @media (max-width: 768px) {
-      .layout-a,
-      .layout-b .top,
-      .layout-c .bottom {
-        flex-direction: column;
+      .gallery {
+        column-count: 1;
       }
+    }
 
-      .layout-a .right,
-      .layout-b .top,
-      .layout-c .bottom {
-        flex-direction: column;
-      }
+    .gallery-item {
+      width: 100%;
+      display: block;
+      margin-bottom: 24px;
+      border-radius: 8px;
+      transition: transform 0.2s ease;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.01);
     }
   </style>
 </head>
@@ -119,41 +57,17 @@
 
   <div class="container">
     <div class="gallery">
-      <div class="gallery-block layout-a">
-        <div class="left">
-          <img src="https://images.unsplash.com/photo-1750210955902-ce0e71765fb1?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Gallery Image 1">
-        </div>
-        <div class="right">
-          <img src="https://images.unsplash.com/photo-1754851348758-564daaf750e4?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Gallery Image 2">
-          <img src="https://images.unsplash.com/photo-1756789347833-dd0841c4086f?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Gallery Image 3">
-        </div>
-      </div>
-
-      <div class="gallery-block layout-b">
-        <div class="top">
-          <img src="https://images.unsplash.com/photo-1756880070362-1cbe2b435418?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Gallery Image 4">
-          <img src="https://images.unsplash.com/photo-1756768937629-febe4bf15fcf?q=80&w=2342&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Gallery Image 5">
-        </div>
-        <div class="bottom">
-          <img src="https://images.unsplash.com/photo-1756673636240-18e514261a94?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Gallery Image 6">
-        </div>
-      </div>
-
-      <div class="gallery-block layout-c">
-        <div class="top">
-          <img src="https://plus.unsplash.com/premium_photo-1695604461277-fa3f0d46da6c?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Gallery Image 7">
-        </div>
-        <div class="bottom">
-          <img src="https://images.unsplash.com/photo-1756786605292-f6b83d2157aa?q=80&w=1009&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Gallery Image 8">
-          <img src="https://images.unsplash.com/photo-1756567579531-405e4df07572?q=80&w=1335&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Gallery Image 9">
-        </div>
-      </div>
+      <img class="gallery-item" src="https://images.unsplash.com/photo-1750210955902-ce0e71765fb1?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Gallery Image 1">
+      <img class="gallery-item" src="https://images.unsplash.com/photo-1754851348758-564daaf750e4?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Gallery Image 2">
+      <img class="gallery-item" src="https://images.unsplash.com/photo-1756789347833-dd0841c4086f?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Gallery Image 3">
+      <img class="gallery-item" src="https://images.unsplash.com/photo-1756880070362-1cbe2b435418?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Gallery Image 4">
+      <img class="gallery-item" src="https://images.unsplash.com/photo-1756768937629-febe4bf15fcf?q=80&w=2342&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Gallery Image 5">
+      <img class="gallery-item" src="https://images.unsplash.com/photo-1756673636240-18e514261a94?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Gallery Image 6">
+      <img class="gallery-item" src="https://plus.unsplash.com/premium_photo-1695604461277-fa3f0d46da6c?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Gallery Image 7">
+      <img class="gallery-item" src="https://images.unsplash.com/photo-1756786605292-f6b83d2157aa?q=80&w=1009&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Gallery Image 8">
+      <img class="gallery-item" src="https://images.unsplash.com/photo-1756567579531-405e4df07572?q=80&w=1335&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Gallery Image 9">
     </div>
   </div>
 
 </body>
 </html>
-    img {
-      max-width: 100%;
-      height: auto;
-    }
