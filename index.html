@@ -23,7 +23,7 @@
 
     .gallery {
       column-count: 3;
-      column-gap: 2px;
+      column-gap: 5px;
     }
 
     @media (max-width: 1024px) {
@@ -41,12 +41,12 @@
     .gallery-item {
       width: 100%;
       display: block;
-      margin-bottom: 2px;
-      transition: border 0.2s ease;
+      margin-bottom: 5px;
+      transition: transform 0.2s ease;
     }
 
     .gallery-item:hover {
-       border: 2px solid #6cf2f9;
+      transform: scale(1.01);
     }
   </style>
 </head>
